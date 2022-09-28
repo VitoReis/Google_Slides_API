@@ -13,7 +13,7 @@ SLIDESSCOPES = ['https://www.googleapis.com/auth/presentations']
 DRIVESCOPES = ['https://www.googleapis.com/auth/drive']
 
 
-PRESENTATION_ID = 'YOUR GOOGLE SLIDES ID'
+PRESENTATION_ID = 'SLIDEID'
 
 
 def main():
@@ -48,7 +48,7 @@ def main():
         slides_service = build('slides', 'v1', credentials=slidesCreds)
         drive_service = build('drive', 'v3', credentials=driveCreds)
         # Create a new slide title
-        copy_title = 'Copia teste'
+        copy_title = 'Proposta comercial - Café Vertentes'
         body = {
             'name': copy_title
         }
@@ -61,37 +61,100 @@ def main():
             {
                 'replaceAllText': {
                     'containsText': {
-                        'text': '{{Titulo}}',
+                        'text': '{{projeto}}',
                         'matchCase': True
                     },
-                    'replaceText': 'Titulo do slide'
+                    'replaceText': 'Café Vertentes'
                 }
             },
             {
                 'replaceAllText': {
                     'containsText': {
-                        'text': '{{Subtitulo}}',
+                        'text': '{{descricao}}',
                         'matchCase': True
                     },
-                    'replaceText': 'Subtitulo do slide'
+                    'replaceText': 'Levar grãos de alta qualidade para todos aqueles amantes de café que queiram desfrutar de uma experiência nova e com um café saboroso e com um preço justo.'
                 }
             },
             {
                 'replaceAllText': {
                     'containsText': {
-                        'text': '{{Titulo1}}',
+                        'text': '{{problema}}',
                         'matchCase': True
                     },
-                    'replaceText': 'Titulo 1 do slide'
+                    'replaceText': 'Mercado ainda não consolidado na região.'
                 }
             },
             {
                 'replaceAllText': {
                     'containsText': {
-                        'text': '{{Texto1}}',
+                        'text': '{{solucao}}',
                         'matchCase': True
                     },
-                    'replaceText': 'Texto 1 do slide'
+                    'replaceText': 'Entrega de produtos de alta qualidade a um preço acessível aos clientes.'
+                }
+            },
+            {
+                'replaceAllText': {
+                    'containsText': {
+                        'text': '{{Beneficio1}}',
+                        'matchCase': True
+                    },
+                    'replaceText': 'Produtos de alta qualidade;'
+                }
+            },
+            {
+                'replaceAllText': {
+                    'containsText': {
+                        'text': '{{Beneficio2}}',
+                        'matchCase': True
+                    },
+                    'replaceText': 'Preço acessível;'
+                }
+            },
+            {
+                'replaceAllText': {
+                    'containsText': {
+                        'text': '{{Beneficio3}}',
+                        'matchCase': True
+                    },
+                    'replaceText': 'Foco na satisfação do cliente;'
+                }
+            },
+            {
+                'replaceAllText': {
+                    'containsText': {
+                        'text': '{{Beneficio4}}',
+                        'matchCase': True
+                    },
+                    'replaceText': 'Alta produção.'
+                }
+            },
+            {
+                'replaceAllText': {
+                    'containsText': {
+                        'text': '{{custoDireto}}',
+                        'matchCase': True
+                    },
+                    'replaceText': '1750,75'
+                }
+            },
+            {
+                'replaceAllText': {
+                    'containsText': {
+                        'text': '{{custoIndireto}}',
+                        'matchCase': True
+                    },
+                    'replaceText': '900,00'
+                }
+            },
+            {
+                'replaceAllText': {
+                    'containsText': {
+                        'text': '{{plano}}',
+                        'matchCase': True
+                    },
+                    'replaceText': 'Explorar um mercado ainda não consolidado na região e tornar-se referência.'
                 }
             }
         ]
